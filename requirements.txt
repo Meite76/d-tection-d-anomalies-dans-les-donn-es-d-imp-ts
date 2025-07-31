@@ -1,0 +1,27 @@
+# ETL & data
+pandas
+numpy
+faker
+sqlalchemy
+psycopg2-binary
+
+# Machine Learning
+scikit-learn
+  # pour autoencoder si besoin
+
+# Stockage S3 (MinIO ou AWS)
+boto3
+pyarrow
+
+# Orchestration
+prefect
+
+# DBT
+dbt-core
+dbt-postgres
+
+# Visualisation (optionnel, config par Docker/serveur)
+# metabase ou apache superset : config à part
+
+# DVC
+dvc[s3]

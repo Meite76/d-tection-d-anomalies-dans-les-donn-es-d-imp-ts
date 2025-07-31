@@ -1,0 +1,1 @@
+{"_invocation_id": "1e8d52e9-12cd-48e7-81a3-9baedc327d0c", "linked": {"0": {"name": "model.dbt_fiscal.stg_donnees_fiscales", "type": "model", "succ": [1]}, "1": {"name": "model.dbt_fiscal.fiscal_anomalies", "type": "model"}}}

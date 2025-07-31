@@ -1,0 +1,13 @@
+name: 'dbt_fiscal'
+version: '1.0.0'
+profile: 'default'   # correspond au profil dans profiles.yml
+
+model-paths: ["models"]
+
+models:
+  dbt_fiscal:
+    +materialized: view
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

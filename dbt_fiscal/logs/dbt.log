@@ -1,0 +1,949 @@
+[0m15:13:26.525990 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B3FEDF60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B5282AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B52828F0>]}
+
+
+============================== 15:13:26.539658 | 7924757b-5a50-40c7-bd22-a16094d5783b ==============================
+[0m15:13:26.539658 [info ] [MainThread]: Running with dbt=1.10.6
+[0m15:13:26.540169 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\POATAN\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:13:26.588773 [info ] [MainThread]: dbt version: 1.10.6
+[0m15:13:26.591950 [info ] [MainThread]: python version: 3.10.10
+[0m15:13:26.593995 [info ] [MainThread]: python path: C:\Users\POATAN\AppData\Local\Programs\Python\Python310\python.exe
+[0m15:13:26.597304 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m15:13:26.732276 [info ] [MainThread]: Using profiles dir at C:\Users\POATAN\.dbt
+[0m15:13:26.742598 [info ] [MainThread]: Using profiles.yml file at C:\Users\POATAN\.dbt\profiles.yml
+[0m15:13:26.742598 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\POATAN\Desktop\détection d’anomalies dans les données d’impôts\dbt_fiscal\dbt_project.yml
+[0m15:13:26.742598 [info ] [MainThread]: adapter type: postgres
+[0m15:13:26.742598 [info ] [MainThread]: adapter version: 1.9.0
+[0m15:13:26.749104 [info ] [MainThread]: Configuration:
+[0m15:13:26.758833 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:13:26.759842 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m15:13:26.760843 [info ] [MainThread]: Required dependencies:
+[0m15:13:26.761844 [debug] [MainThread]: Executing "git --help"
+[0m15:13:26.832429 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:13:26.833427 [debug] [MainThread]: STDERR: "b''"
+[0m15:13:26.834542 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:13:26.836262 [info ] [MainThread]: Connection:
+[0m15:13:26.837788 [info ] [MainThread]:   host: localhost
+[0m15:13:26.838786 [info ] [MainThread]:   port: 5432
+[0m15:13:26.839787 [info ] [MainThread]:   user: postgres
+[0m15:13:26.840787 [info ] [MainThread]:   database: fiscal_db
+[0m15:13:26.841788 [info ] [MainThread]:   schema: public
+[0m15:13:26.842789 [info ] [MainThread]:   connect_timeout: 10
+[0m15:13:26.849260 [info ] [MainThread]:   role: None
+[0m15:13:26.850216 [info ] [MainThread]:   search_path: None
+[0m15:13:26.856210 [info ] [MainThread]:   keepalives_idle: 0
+[0m15:13:26.858730 [info ] [MainThread]:   sslmode: None
+[0m15:13:26.859808 [info ] [MainThread]:   sslcert: None
+[0m15:13:26.860750 [info ] [MainThread]:   sslkey: None
+[0m15:13:26.861757 [info ] [MainThread]:   sslrootcert: None
+[0m15:13:26.863747 [info ] [MainThread]:   application_name: dbt
+[0m15:13:26.864747 [info ] [MainThread]:   retries: 1
+[0m15:13:26.865897 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:13:27.354624 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m15:13:27.489429 [debug] [MainThread]: Using postgres connection "debug"
+[0m15:13:27.490681 [debug] [MainThread]: On debug: select 1 as id
+[0m15:13:27.494377 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:13:27.565303 [debug] [MainThread]: SQL status: SELECT 1 in 0.071 seconds
+[0m15:13:27.568305 [debug] [MainThread]: On debug: Close
+[0m15:13:27.573510 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:13:27.575029 [info ] [MainThread]: [31m1 check failed:[0m
+[0m15:13:27.577036 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\POATAN\Desktop\détection d’anomalies dans les données d’impôts\dbt_fiscal\dbt_project.yml> not found
+
+[0m15:13:27.579559 [debug] [MainThread]: Command `dbt debug` failed at 15:13:27.578621 after 1.18 seconds
+[0m15:13:27.580555 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:13:27.581555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B3FEDF60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B53EA4D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6B53EB8E0>]}
+[0m15:13:27.582557 [debug] [MainThread]: Flushing usage events
+[0m15:13:28.529004 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:21:17.568522 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8504DFF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC862E2BF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC862E2A10>]}
+
+
+============================== 15:21:17.575142 | 2dc4e7c3-2602-496b-a88f-161d9e0b6219 ==============================
+[0m15:21:17.575142 [info ] [MainThread]: Running with dbt=1.10.6
+[0m15:21:17.576171 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\POATAN\\Desktop\\détection d’anomalies dans les données d’impôts\\dbt_fiscal\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\POATAN\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:21:17.625869 [info ] [MainThread]: dbt version: 1.10.6
+[0m15:21:17.626841 [info ] [MainThread]: python version: 3.10.10
+[0m15:21:17.628430 [info ] [MainThread]: python path: C:\Users\POATAN\AppData\Local\Programs\Python\Python310\python.exe
+[0m15:21:17.629361 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m15:21:17.741468 [info ] [MainThread]: Using profiles dir at C:\Users\POATAN\.dbt
+[0m15:21:17.742480 [info ] [MainThread]: Using profiles.yml file at C:\Users\POATAN\.dbt\profiles.yml
+[0m15:21:17.743491 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\POATAN\Desktop\détection d’anomalies dans les données d’impôts\dbt_fiscal\dbt_project.yml
+[0m15:21:17.746268 [info ] [MainThread]: adapter type: postgres
+[0m15:21:17.747266 [info ] [MainThread]: adapter version: 1.9.0
+[0m15:21:17.951553 [info ] [MainThread]: Configuration:
+[0m15:21:17.951553 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:21:17.957640 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:21:17.957640 [info ] [MainThread]: Required dependencies:
+[0m15:21:17.960909 [debug] [MainThread]: Executing "git --help"
+[0m15:21:18.048214 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:21:18.049218 [debug] [MainThread]: STDERR: "b''"
+[0m15:21:18.050852 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:21:18.052419 [info ] [MainThread]: Connection:
+[0m15:21:18.053424 [info ] [MainThread]:   host: localhost
+[0m15:21:18.053424 [info ] [MainThread]:   port: 5432
+[0m15:21:18.053424 [info ] [MainThread]:   user: postgres
+[0m15:21:18.053424 [info ] [MainThread]:   database: fiscal_db
+[0m15:21:18.059573 [info ] [MainThread]:   schema: public
+[0m15:21:18.066311 [info ] [MainThread]:   connect_timeout: 10
+[0m15:21:18.068326 [info ] [MainThread]:   role: None
+[0m15:21:18.072322 [info ] [MainThread]:   search_path: None
+[0m15:21:18.076239 [info ] [MainThread]:   keepalives_idle: 0
+[0m15:21:18.077475 [info ] [MainThread]:   sslmode: None
+[0m15:21:18.078480 [info ] [MainThread]:   sslcert: None
+[0m15:21:18.079477 [info ] [MainThread]:   sslkey: None
+[0m15:21:18.081477 [info ] [MainThread]:   sslrootcert: None
+[0m15:21:18.083476 [info ] [MainThread]:   application_name: dbt
+[0m15:21:18.084476 [info ] [MainThread]:   retries: 1
+[0m15:21:18.091838 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:21:18.626399 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m15:21:18.748976 [debug] [MainThread]: Using postgres connection "debug"
+[0m15:21:18.748976 [debug] [MainThread]: On debug: select 1 as id
+[0m15:21:18.748976 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:21:18.787517 [debug] [MainThread]: SQL status: SELECT 1 in 0.036 seconds
+[0m15:21:18.789861 [debug] [MainThread]: On debug: Close
+[0m15:21:18.790769 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:21:18.793772 [info ] [MainThread]: [32mAll checks passed![0m
+[0m15:21:18.795786 [debug] [MainThread]: Command `dbt debug` succeeded at 15:21:18.794778 after 1.36 seconds
+[0m15:21:18.796772 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:21:18.797771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8504DFF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8642B1F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC85320B80>]}
+[0m15:21:18.798770 [debug] [MainThread]: Flushing usage events
+[0m15:21:19.879660 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:29:16.836947 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026E3A41E050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026E3C690B20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026E3C690940>]}
+
+
+============================== 15:29:16.851675 | d47b74ad-eafa-48e7-b9d7-c1a3be511933 ==============================
+[0m15:29:16.851675 [info ] [MainThread]: Running with dbt=1.10.6
+[0m15:29:16.851675 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'dbt_fiscal\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\POATAN\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --project-dir dbt_fiscal', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m15:29:17.343179 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd47b74ad-eafa-48e7-b9d7-c1a3be511933', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026E3C651330>]}
+[0m15:29:17.454315 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd47b74ad-eafa-48e7-b9d7-c1a3be511933', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026E3BDC6FE0>]}
+[0m15:29:17.456866 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:29:18.129460 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m15:29:18.130420 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:29:18.132645 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'd47b74ad-eafa-48e7-b9d7-c1a3be511933', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026E3C906EC0>]}
+[0m15:29:20.905592 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.dbt_fiscal.stg_donnees_fiscales' (models\staging\stg_donnees_fiscales.sql) depends on a node named 'donnees_fiscales_raw' which was not found
+[0m15:29:20.905592 [debug] [MainThread]: Command `dbt run` failed at 15:29:20.905592 after 4.20 seconds
+[0m15:29:20.905592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026E3A41E050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026E3CAEBEB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026E3DD4CF70>]}
+[0m15:29:20.905592 [debug] [MainThread]: Flushing usage events
+[0m15:29:22.041274 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:32:16.407261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214A881E050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214A9AB6EC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214A9AB6CE0>]}
+
+
+============================== 15:32:16.417453 | 77da4506-cfa2-419d-9db8-cff50a522af2 ==============================
+[0m15:32:16.417453 [info ] [MainThread]: Running with dbt=1.10.6
+[0m15:32:16.417453 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\POATAN\\.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'dbt_fiscal\\logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --project-dir dbt_fiscal', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:32:16.713080 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '77da4506-cfa2-419d-9db8-cff50a522af2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214A9A81330>]}
+[0m15:32:16.804846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '77da4506-cfa2-419d-9db8-cff50a522af2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214A91F6FE0>]}
+[0m15:32:16.804846 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:32:17.336549 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m15:32:17.341105 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:32:17.341105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '77da4506-cfa2-419d-9db8-cff50a522af2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214A9D36EC0>]}
+[0m15:32:18.963606 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_fiscal.marts
+[0m15:32:18.971731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '77da4506-cfa2-419d-9db8-cff50a522af2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214AB1E26E0>]}
+[0m15:32:19.088549 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fiscal\target\manifest.json
+[0m15:32:19.088549 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fiscal\target\semantic_manifest.json
+[0m15:32:19.139410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '77da4506-cfa2-419d-9db8-cff50a522af2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214AB1E3400>]}
+[0m15:32:19.148496 [info ] [MainThread]: Found 1 model, 434 macros
+[0m15:32:19.149618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '77da4506-cfa2-419d-9db8-cff50a522af2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214AB1E3B20>]}
+[0m15:32:19.149618 [info ] [MainThread]: 
+[0m15:32:19.149618 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:32:19.149618 [info ] [MainThread]: 
+[0m15:32:19.156187 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:32:19.159737 [debug] [ThreadPool]: Acquiring new postgres connection 'list_fiscal_db'
+[0m15:32:19.326265 [debug] [ThreadPool]: Using postgres connection "list_fiscal_db"
+[0m15:32:19.326265 [debug] [ThreadPool]: On list_fiscal_db: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "connection_name": "list_fiscal_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:32:19.326265 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:32:19.439698 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.108 seconds
+[0m15:32:19.439698 [debug] [ThreadPool]: On list_fiscal_db: Close
+[0m15:32:19.445928 [debug] [ThreadPool]: Acquiring new postgres connection 'list_fiscal_db_public'
+[0m15:32:19.461800 [debug] [ThreadPool]: Using postgres connection "list_fiscal_db_public"
+[0m15:32:19.462821 [debug] [ThreadPool]: On list_fiscal_db_public: BEGIN
+[0m15:32:19.462821 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:32:19.495642 [debug] [ThreadPool]: SQL status: BEGIN in 0.032 seconds
+[0m15:32:19.495642 [debug] [ThreadPool]: Using postgres connection "list_fiscal_db_public"
+[0m15:32:19.495642 [debug] [ThreadPool]: On list_fiscal_db_public: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "connection_name": "list_fiscal_db_public"} */
+select
+      'fiscal_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'fiscal_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'fiscal_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m15:32:19.589687 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.089 seconds
+[0m15:32:19.592681 [debug] [ThreadPool]: On list_fiscal_db_public: ROLLBACK
+[0m15:32:19.595751 [debug] [ThreadPool]: On list_fiscal_db_public: Close
+[0m15:32:19.610665 [debug] [MainThread]: Using postgres connection "master"
+[0m15:32:19.611667 [debug] [MainThread]: On master: BEGIN
+[0m15:32:19.611667 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:32:19.635569 [debug] [MainThread]: SQL status: BEGIN in 0.023 seconds
+[0m15:32:19.637163 [debug] [MainThread]: Using postgres connection "master"
+[0m15:32:19.638091 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m15:32:19.698028 [debug] [MainThread]: SQL status: SELECT 0 in 0.059 seconds
+[0m15:32:19.700552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '77da4506-cfa2-419d-9db8-cff50a522af2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214AB236E00>]}
+[0m15:32:19.702551 [debug] [MainThread]: On master: ROLLBACK
+[0m15:32:19.704553 [debug] [MainThread]: Using postgres connection "master"
+[0m15:32:19.705551 [debug] [MainThread]: On master: BEGIN
+[0m15:32:19.707553 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m15:32:19.708550 [debug] [MainThread]: On master: COMMIT
+[0m15:32:19.710758 [debug] [MainThread]: Using postgres connection "master"
+[0m15:32:19.711746 [debug] [MainThread]: On master: COMMIT
+[0m15:32:19.714748 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m15:32:19.716751 [debug] [MainThread]: On master: Close
+[0m15:32:19.779292 [debug] [Thread-1 (]: Began running node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:32:19.780298 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_donnees_fiscales ........................ [RUN]
+[0m15:32:19.781293 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_fiscal.stg_donnees_fiscales'
+[0m15:32:19.782801 [debug] [Thread-1 (]: Began compiling node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:32:19.802301 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:32:19.807758 [debug] [Thread-1 (]: Began executing node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:32:19.898783 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:32:19.898783 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:32:19.898783 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: BEGIN
+[0m15:32:19.898783 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:32:19.919372 [debug] [Thread-1 (]: SQL status: BEGIN in 0.022 seconds
+[0m15:32:19.929385 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:32:19.929921 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+
+  create view "fiscal_db"."public"."stg_donnees_fiscales__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_donnees_fiscales.sql
+
+with raw as (
+    select * from donnees_fiscales_raw
+)
+
+select
+    id_contribuable,
+    lower(nom) as nom,
+    lower(prenom) as prenom,
+    region,
+    revenu_annuel,
+    revenu_declare,
+    impot_declare,
+    depenses,
+    charges,
+    type_revenu
+from raw
+  );
+[0m15:32:19.981717 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.054 seconds
+[0m15:32:19.992805 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:32:19.992805 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+alter table "fiscal_db"."public"."stg_donnees_fiscales__dbt_tmp" rename to "stg_donnees_fiscales"
+[0m15:32:20.003351 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m15:32:20.024587 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: COMMIT
+[0m15:32:20.024587 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:32:20.024587 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: COMMIT
+[0m15:32:20.042250 [debug] [Thread-1 (]: SQL status: COMMIT in 0.011 seconds
+[0m15:32:20.055955 [debug] [Thread-1 (]: Applying DROP to: "fiscal_db"."public"."stg_donnees_fiscales__dbt_backup"
+[0m15:32:20.062476 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:32:20.066515 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+drop view if exists "fiscal_db"."public"."stg_donnees_fiscales__dbt_backup" cascade
+[0m15:32:20.066515 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.002 seconds
+[0m15:32:20.072625 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: Close
+[0m15:32:20.082710 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77da4506-cfa2-419d-9db8-cff50a522af2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214AB650340>]}
+[0m15:32:20.082710 [info ] [Thread-1 (]: 1 of 1 OK created sql view model public.stg_donnees_fiscales ................... [[32mCREATE VIEW[0m in 0.29s]
+[0m15:32:20.082710 [debug] [Thread-1 (]: Finished running node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:32:20.087724 [debug] [MainThread]: Using postgres connection "master"
+[0m15:32:20.087724 [debug] [MainThread]: On master: BEGIN
+[0m15:32:20.087724 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:32:20.115668 [debug] [MainThread]: SQL status: BEGIN in 0.024 seconds
+[0m15:32:20.116752 [debug] [MainThread]: On master: COMMIT
+[0m15:32:20.117750 [debug] [MainThread]: Using postgres connection "master"
+[0m15:32:20.118750 [debug] [MainThread]: On master: COMMIT
+[0m15:32:20.121760 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m15:32:20.122751 [debug] [MainThread]: On master: Close
+[0m15:32:20.126796 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:32:20.128802 [debug] [MainThread]: Connection 'list_fiscal_db' was properly closed.
+[0m15:32:20.129798 [debug] [MainThread]: Connection 'list_fiscal_db_public' was properly closed.
+[0m15:32:20.131488 [debug] [MainThread]: Connection 'model.dbt_fiscal.stg_donnees_fiscales' was properly closed.
+[0m15:32:20.132496 [info ] [MainThread]: 
+[0m15:32:20.143120 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.98 seconds (0.98s).
+[0m15:32:20.147048 [debug] [MainThread]: Command end result
+[0m15:32:20.232820 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fiscal\target\manifest.json
+[0m15:32:20.236825 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fiscal\target\semantic_manifest.json
+[0m15:32:20.254624 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_fiscal\target\run_results.json
+[0m15:32:20.256468 [info ] [MainThread]: 
+[0m15:32:20.259420 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:32:20.261418 [info ] [MainThread]: 
+[0m15:32:20.263418 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m15:32:20.267944 [debug] [MainThread]: Command `dbt run` succeeded at 15:32:20.266941 after 3.98 seconds
+[0m15:32:20.270943 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214A881E050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214A5D751B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214A9BC42E0>]}
+[0m15:32:20.293279 [debug] [MainThread]: Flushing usage events
+[0m15:32:21.362588 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:37:10.017834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADAA5FDF00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADAC874A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADAC874850>]}
+
+
+============================== 15:37:10.025364 | 1a1941ef-cf8d-4bd7-958f-f52b136f45ab ==============================
+[0m15:37:10.025364 [info ] [MainThread]: Running with dbt=1.10.6
+[0m15:37:10.026351 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'dbt_fiscal\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\POATAN\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --project-dir dbt_fiscal', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:37:10.334051 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1a1941ef-cf8d-4bd7-958f-f52b136f45ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADAC949060>]}
+[0m15:37:10.430440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1a1941ef-cf8d-4bd7-958f-f52b136f45ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADAC1253C0>]}
+[0m15:37:10.433650 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:37:10.949232 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m15:37:11.228971 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m15:37:11.228971 [debug] [MainThread]: Partial parsing: added file: dbt_fiscal://models\marts\fiscal_anomalies.sql
+[0m15:37:11.669821 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1a1941ef-cf8d-4bd7-958f-f52b136f45ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADADFFCB50>]}
+[0m15:37:11.845606 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fiscal\target\manifest.json
+[0m15:37:11.850780 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fiscal\target\semantic_manifest.json
+[0m15:37:11.888764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1a1941ef-cf8d-4bd7-958f-f52b136f45ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADACE71960>]}
+[0m15:37:11.888764 [info ] [MainThread]: Found 2 models, 434 macros
+[0m15:37:11.888764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1a1941ef-cf8d-4bd7-958f-f52b136f45ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADACE6B670>]}
+[0m15:37:11.896896 [info ] [MainThread]: 
+[0m15:37:11.898917 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:37:11.900084 [info ] [MainThread]: 
+[0m15:37:11.902105 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:37:11.918114 [debug] [ThreadPool]: Acquiring new postgres connection 'list_fiscal_db'
+[0m15:37:12.093345 [debug] [ThreadPool]: Using postgres connection "list_fiscal_db"
+[0m15:37:12.093345 [debug] [ThreadPool]: On list_fiscal_db: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "connection_name": "list_fiscal_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:37:12.093345 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:37:12.123900 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.033 seconds
+[0m15:37:12.123900 [debug] [ThreadPool]: On list_fiscal_db: Close
+[0m15:37:12.134371 [debug] [ThreadPool]: Acquiring new postgres connection 'list_fiscal_db_public'
+[0m15:37:12.144424 [debug] [ThreadPool]: Using postgres connection "list_fiscal_db_public"
+[0m15:37:12.144424 [debug] [ThreadPool]: On list_fiscal_db_public: BEGIN
+[0m15:37:12.144424 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:37:12.175655 [debug] [ThreadPool]: SQL status: BEGIN in 0.031 seconds
+[0m15:37:12.175655 [debug] [ThreadPool]: Using postgres connection "list_fiscal_db_public"
+[0m15:37:12.175655 [debug] [ThreadPool]: On list_fiscal_db_public: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "connection_name": "list_fiscal_db_public"} */
+select
+      'fiscal_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'fiscal_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'fiscal_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m15:37:12.180818 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.005 seconds
+[0m15:37:12.185925 [debug] [ThreadPool]: On list_fiscal_db_public: ROLLBACK
+[0m15:37:12.185925 [debug] [ThreadPool]: On list_fiscal_db_public: Close
+[0m15:37:12.196719 [debug] [MainThread]: Using postgres connection "master"
+[0m15:37:12.196719 [debug] [MainThread]: On master: BEGIN
+[0m15:37:12.196719 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:37:12.227348 [debug] [MainThread]: SQL status: BEGIN in 0.024 seconds
+[0m15:37:12.227856 [debug] [MainThread]: Using postgres connection "master"
+[0m15:37:12.227856 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m15:37:12.252168 [debug] [MainThread]: SQL status: SELECT 1 in 0.022 seconds
+[0m15:37:12.253291 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1a1941ef-cf8d-4bd7-958f-f52b136f45ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADACE0C8B0>]}
+[0m15:37:12.253291 [debug] [MainThread]: On master: ROLLBACK
+[0m15:37:12.253291 [debug] [MainThread]: Using postgres connection "master"
+[0m15:37:12.253291 [debug] [MainThread]: On master: BEGIN
+[0m15:37:12.258397 [debug] [MainThread]: SQL status: BEGIN in 0.002 seconds
+[0m15:37:12.258397 [debug] [MainThread]: On master: COMMIT
+[0m15:37:12.258397 [debug] [MainThread]: Using postgres connection "master"
+[0m15:37:12.258397 [debug] [MainThread]: On master: COMMIT
+[0m15:37:12.258397 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m15:37:12.258397 [debug] [MainThread]: On master: Close
+[0m15:37:12.268495 [debug] [Thread-1 (]: Began running node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:37:12.268495 [info ] [Thread-1 (]: 1 of 2 START sql view model public.stg_donnees_fiscales ........................ [RUN]
+[0m15:37:12.274142 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_fiscal.stg_donnees_fiscales'
+[0m15:37:12.274142 [debug] [Thread-1 (]: Began compiling node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:37:12.278721 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:37:12.278721 [debug] [Thread-1 (]: Began executing node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:37:12.360766 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:37:12.361767 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:37:12.362767 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: BEGIN
+[0m15:37:12.364340 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:37:12.384984 [debug] [Thread-1 (]: SQL status: BEGIN in 0.021 seconds
+[0m15:37:12.385498 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:37:12.386511 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+
+  create view "fiscal_db"."public"."stg_donnees_fiscales__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_donnees_fiscales.sql
+
+with raw as (
+    select * from donnees_fiscales_raw
+)
+
+select
+    id_contribuable,
+    lower(nom) as nom,
+    lower(prenom) as prenom,
+    region,
+    revenu_annuel,
+    revenu_declare,
+    impot_declare,
+    depenses,
+    charges,
+    type_revenu
+from raw
+  );
+[0m15:37:12.395392 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.008 seconds
+[0m15:37:12.396906 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:37:12.396906 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+alter table "fiscal_db"."public"."stg_donnees_fiscales" rename to "stg_donnees_fiscales__dbt_backup"
+[0m15:37:12.406611 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m15:37:12.412636 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:37:12.412636 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+alter table "fiscal_db"."public"."stg_donnees_fiscales__dbt_tmp" rename to "stg_donnees_fiscales"
+[0m15:37:12.416712 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.006 seconds
+[0m15:37:12.460771 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: COMMIT
+[0m15:37:12.460771 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:37:12.460771 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: COMMIT
+[0m15:37:12.468406 [debug] [Thread-1 (]: SQL status: COMMIT in 0.004 seconds
+[0m15:37:12.486917 [debug] [Thread-1 (]: Applying DROP to: "fiscal_db"."public"."stg_donnees_fiscales__dbt_backup"
+[0m15:37:12.495390 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:37:12.496422 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+drop view if exists "fiscal_db"."public"."stg_donnees_fiscales__dbt_backup" cascade
+[0m15:37:12.522713 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.025 seconds
+[0m15:37:12.522713 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: Close
+[0m15:37:12.530998 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1a1941ef-cf8d-4bd7-958f-f52b136f45ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADA8B0B1C0>]}
+[0m15:37:12.530998 [info ] [Thread-1 (]: 1 of 2 OK created sql view model public.stg_donnees_fiscales ................... [[32mCREATE VIEW[0m in 0.25s]
+[0m15:37:12.530998 [debug] [Thread-1 (]: Finished running node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:37:12.530998 [debug] [Thread-1 (]: Began running node model.dbt_fiscal.fiscal_anomalies
+[0m15:37:12.530998 [info ] [Thread-1 (]: 2 of 2 START sql table model public.fiscal_anomalies ........................... [RUN]
+[0m15:37:12.538008 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_fiscal.stg_donnees_fiscales, now model.dbt_fiscal.fiscal_anomalies)
+[0m15:37:12.539684 [debug] [Thread-1 (]: Began compiling node model.dbt_fiscal.fiscal_anomalies
+[0m15:37:12.548213 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fiscal.fiscal_anomalies"
+[0m15:37:12.551719 [debug] [Thread-1 (]: Began executing node model.dbt_fiscal.fiscal_anomalies
+[0m15:37:12.596637 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fiscal.fiscal_anomalies"
+[0m15:37:12.599880 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:37:12.602339 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: BEGIN
+[0m15:37:12.603303 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:37:12.626540 [debug] [Thread-1 (]: SQL status: BEGIN in 0.023 seconds
+[0m15:37:12.627562 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:37:12.628532 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.fiscal_anomalies"} */
+
+  
+    
+
+  create  table "fiscal_db"."public"."fiscal_anomalies__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- fiscal_anomalies.sql
+with base as (
+    select * from "fiscal_db"."public"."stg_donnees_fiscales"
+),
+
+anomalies as (
+    select
+        *,
+        case
+            when revenu_declare < revenu_annuel * 0.7 then 1 else 0
+        end as flag_sous_declaration,
+        case
+            when impot_declare < revenu_declare * 0.2 then 1 else 0
+        end as flag_impot_bas
+    from base
+)
+
+select * from anomalies
+where flag_sous_declaration = 1 or flag_impot_bas = 1
+  );
+  
+[0m15:37:12.790122 [debug] [Thread-1 (]: SQL status: SELECT 763 in 0.168 seconds
+[0m15:37:12.805893 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:37:12.805893 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.fiscal_anomalies"} */
+alter table "fiscal_db"."public"."fiscal_anomalies__dbt_tmp" rename to "fiscal_anomalies"
+[0m15:37:12.810000 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:37:12.810000 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: COMMIT
+[0m15:37:12.810000 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:37:12.810000 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: COMMIT
+[0m15:37:12.822133 [debug] [Thread-1 (]: SQL status: COMMIT in 0.008 seconds
+[0m15:37:12.822133 [debug] [Thread-1 (]: Applying DROP to: "fiscal_db"."public"."fiscal_anomalies__dbt_backup"
+[0m15:37:12.822133 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:37:12.830284 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.fiscal_anomalies"} */
+drop table if exists "fiscal_db"."public"."fiscal_anomalies__dbt_backup" cascade
+[0m15:37:12.830284 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.001 seconds
+[0m15:37:12.830284 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: Close
+[0m15:37:12.830284 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1a1941ef-cf8d-4bd7-958f-f52b136f45ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADACE7B7C0>]}
+[0m15:37:12.837958 [info ] [Thread-1 (]: 2 of 2 OK created sql table model public.fiscal_anomalies ...................... [[32mSELECT 763[0m in 0.29s]
+[0m15:37:12.840532 [debug] [Thread-1 (]: Finished running node model.dbt_fiscal.fiscal_anomalies
+[0m15:37:12.840532 [debug] [MainThread]: Using postgres connection "master"
+[0m15:37:12.840532 [debug] [MainThread]: On master: BEGIN
+[0m15:37:12.840532 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:37:12.876157 [debug] [MainThread]: SQL status: BEGIN in 0.030 seconds
+[0m15:37:12.877195 [debug] [MainThread]: On master: COMMIT
+[0m15:37:12.878152 [debug] [MainThread]: Using postgres connection "master"
+[0m15:37:12.879182 [debug] [MainThread]: On master: COMMIT
+[0m15:37:12.881031 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m15:37:12.882714 [debug] [MainThread]: On master: Close
+[0m15:37:12.885235 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:37:12.886231 [debug] [MainThread]: Connection 'list_fiscal_db' was properly closed.
+[0m15:37:12.888230 [debug] [MainThread]: Connection 'list_fiscal_db_public' was properly closed.
+[0m15:37:12.889230 [debug] [MainThread]: Connection 'model.dbt_fiscal.fiscal_anomalies' was properly closed.
+[0m15:37:12.891236 [info ] [MainThread]: 
+[0m15:37:12.893604 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.99 seconds (0.99s).
+[0m15:37:12.898722 [debug] [MainThread]: Command end result
+[0m15:37:12.979326 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fiscal\target\manifest.json
+[0m15:37:12.983327 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fiscal\target\semantic_manifest.json
+[0m15:37:12.995149 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_fiscal\target\run_results.json
+[0m15:37:12.995149 [info ] [MainThread]: 
+[0m15:37:12.997151 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:37:12.998149 [info ] [MainThread]: 
+[0m15:37:12.999226 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m15:37:13.001221 [debug] [MainThread]: Command `dbt run` succeeded at 15:37:13.001221 after 3.13 seconds
+[0m15:37:13.003218 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADAA5FDF00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADA8B0B1C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ADAB898C10>]}
+[0m15:37:13.004500 [debug] [MainThread]: Flushing usage events
+[0m15:37:14.089327 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:46:18.537366 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA2EEDFF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA5156E60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA5156C80>]}
+
+
+============================== 15:46:18.537366 | 1e8d52e9-12cd-48e7-81a3-9baedc327d0c ==============================
+[0m15:46:18.537366 [info ] [MainThread]: Running with dbt=1.10.6
+[0m15:46:18.537366 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'dbt_fiscal\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\POATAN\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run --project-dir dbt_fiscal', 'send_anonymous_usage_stats': 'True'}
+[0m15:46:18.947687 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1e8d52e9-12cd-48e7-81a3-9baedc327d0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA5121840>]}
+[0m15:46:19.049416 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1e8d52e9-12cd-48e7-81a3-9baedc327d0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA5217F40>]}
+[0m15:46:19.051945 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:46:19.696753 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m15:46:19.972665 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:46:19.972665 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:46:20.014335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1e8d52e9-12cd-48e7-81a3-9baedc327d0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA5778670>]}
+[0m15:46:20.132065 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fiscal\target\manifest.json
+[0m15:46:20.137176 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fiscal\target\semantic_manifest.json
+[0m15:46:20.183402 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1e8d52e9-12cd-48e7-81a3-9baedc327d0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA53D4400>]}
+[0m15:46:20.183402 [info ] [MainThread]: Found 2 models, 434 macros
+[0m15:46:20.183402 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1e8d52e9-12cd-48e7-81a3-9baedc327d0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA53ACDC0>]}
+[0m15:46:20.190023 [info ] [MainThread]: 
+[0m15:46:20.190023 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:46:20.190023 [info ] [MainThread]: 
+[0m15:46:20.196028 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:46:20.216803 [debug] [ThreadPool]: Acquiring new postgres connection 'list_fiscal_db'
+[0m15:46:20.402206 [debug] [ThreadPool]: Using postgres connection "list_fiscal_db"
+[0m15:46:20.402206 [debug] [ThreadPool]: On list_fiscal_db: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "connection_name": "list_fiscal_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:46:20.402206 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:46:20.439052 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.030 seconds
+[0m15:46:20.439052 [debug] [ThreadPool]: On list_fiscal_db: Close
+[0m15:46:20.445289 [debug] [ThreadPool]: Acquiring new postgres connection 'list_fiscal_db_public'
+[0m15:46:20.455324 [debug] [ThreadPool]: Using postgres connection "list_fiscal_db_public"
+[0m15:46:20.455324 [debug] [ThreadPool]: On list_fiscal_db_public: BEGIN
+[0m15:46:20.455324 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:46:20.475918 [debug] [ThreadPool]: SQL status: BEGIN in 0.021 seconds
+[0m15:46:20.475918 [debug] [ThreadPool]: Using postgres connection "list_fiscal_db_public"
+[0m15:46:20.475918 [debug] [ThreadPool]: On list_fiscal_db_public: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "connection_name": "list_fiscal_db_public"} */
+select
+      'fiscal_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'fiscal_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'fiscal_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m15:46:20.483786 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.005 seconds
+[0m15:46:20.486302 [debug] [ThreadPool]: On list_fiscal_db_public: ROLLBACK
+[0m15:46:20.486302 [debug] [ThreadPool]: On list_fiscal_db_public: Close
+[0m15:46:20.496434 [debug] [MainThread]: Using postgres connection "master"
+[0m15:46:20.496434 [debug] [MainThread]: On master: BEGIN
+[0m15:46:20.496434 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:46:20.516688 [debug] [MainThread]: SQL status: BEGIN in 0.019 seconds
+[0m15:46:20.516688 [debug] [MainThread]: Using postgres connection "master"
+[0m15:46:20.523740 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m15:46:20.526774 [debug] [MainThread]: SQL status: SELECT 1 in 0.005 seconds
+[0m15:46:20.526774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1e8d52e9-12cd-48e7-81a3-9baedc327d0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA286F940>]}
+[0m15:46:20.526774 [debug] [MainThread]: On master: ROLLBACK
+[0m15:46:20.526774 [debug] [MainThread]: Using postgres connection "master"
+[0m15:46:20.526774 [debug] [MainThread]: On master: BEGIN
+[0m15:46:20.537374 [debug] [MainThread]: SQL status: BEGIN in 0.002 seconds
+[0m15:46:20.539417 [debug] [MainThread]: On master: COMMIT
+[0m15:46:20.539417 [debug] [MainThread]: Using postgres connection "master"
+[0m15:46:20.539417 [debug] [MainThread]: On master: COMMIT
+[0m15:46:20.539417 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m15:46:20.539417 [debug] [MainThread]: On master: Close
+[0m15:46:20.548028 [debug] [Thread-1 (]: Began running node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:46:20.548028 [info ] [Thread-1 (]: 1 of 2 START sql view model public.stg_donnees_fiscales ........................ [RUN]
+[0m15:46:20.555535 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_fiscal.stg_donnees_fiscales'
+[0m15:46:20.555535 [debug] [Thread-1 (]: Began compiling node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:46:20.566090 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:46:20.568718 [debug] [Thread-1 (]: Began executing node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:46:20.644049 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:46:20.646515 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:46:20.647520 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: BEGIN
+[0m15:46:20.647520 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:46:20.671891 [debug] [Thread-1 (]: SQL status: BEGIN in 0.024 seconds
+[0m15:46:20.672900 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:46:20.673915 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+
+  create view "fiscal_db"."public"."stg_donnees_fiscales__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_donnees_fiscales.sql
+
+with raw as (
+    select * from donnees_fiscales_raw
+)
+
+select
+    id_contribuable,
+    lower(nom) as nom,
+    lower(prenom) as prenom,
+    region,
+    revenu_annuel,
+    revenu_declare,
+    impot_declare,
+    depenses,
+    charges,
+    type_revenu
+from raw
+  );
+[0m15:46:20.683869 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.015 seconds
+[0m15:46:20.693995 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:46:20.693995 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+alter table "fiscal_db"."public"."stg_donnees_fiscales" rename to "stg_donnees_fiscales__dbt_backup"
+[0m15:46:20.702102 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m15:46:20.702102 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:46:20.702102 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+alter table "fiscal_db"."public"."stg_donnees_fiscales__dbt_tmp" rename to "stg_donnees_fiscales"
+[0m15:46:20.710111 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:46:20.737954 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: COMMIT
+[0m15:46:20.741963 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:46:20.743981 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: COMMIT
+[0m15:46:20.743981 [debug] [Thread-1 (]: SQL status: COMMIT in 0.006 seconds
+[0m15:46:20.757667 [debug] [Thread-1 (]: Applying DROP to: "fiscal_db"."public"."stg_donnees_fiscales__dbt_backup"
+[0m15:46:20.764180 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.stg_donnees_fiscales"
+[0m15:46:20.768205 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.stg_donnees_fiscales"} */
+drop view if exists "fiscal_db"."public"."stg_donnees_fiscales__dbt_backup" cascade
+[0m15:46:20.774738 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.006 seconds
+[0m15:46:20.774738 [debug] [Thread-1 (]: On model.dbt_fiscal.stg_donnees_fiscales: Close
+[0m15:46:20.785366 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1e8d52e9-12cd-48e7-81a3-9baedc327d0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA13F41C0>]}
+[0m15:46:20.785366 [info ] [Thread-1 (]: 1 of 2 OK created sql view model public.stg_donnees_fiscales ................... [[32mCREATE VIEW[0m in 0.22s]
+[0m15:46:20.789379 [debug] [Thread-1 (]: Finished running node model.dbt_fiscal.stg_donnees_fiscales
+[0m15:46:20.789379 [debug] [Thread-1 (]: Began running node model.dbt_fiscal.fiscal_anomalies
+[0m15:46:20.789379 [info ] [Thread-1 (]: 2 of 2 START sql table model public.fiscal_anomalies ........................... [RUN]
+[0m15:46:20.797308 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_fiscal.stg_donnees_fiscales, now model.dbt_fiscal.fiscal_anomalies)
+[0m15:46:20.798327 [debug] [Thread-1 (]: Began compiling node model.dbt_fiscal.fiscal_anomalies
+[0m15:46:20.804129 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fiscal.fiscal_anomalies"
+[0m15:46:20.812175 [debug] [Thread-1 (]: Began executing node model.dbt_fiscal.fiscal_anomalies
+[0m15:46:20.862957 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fiscal.fiscal_anomalies"
+[0m15:46:20.864959 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:46:20.866083 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: BEGIN
+[0m15:46:20.866083 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:46:20.888568 [debug] [Thread-1 (]: SQL status: BEGIN in 0.022 seconds
+[0m15:46:20.889580 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:46:20.890561 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.fiscal_anomalies"} */
+
+  
+    
+
+  create  table "fiscal_db"."public"."fiscal_anomalies__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- fiscal_anomalies.sql
+with base as (
+    select * from "fiscal_db"."public"."stg_donnees_fiscales"
+),
+
+anomalies as (
+    select
+        *,
+        case
+            when revenu_declare < revenu_annuel * 0.7 then 1 else 0
+        end as flag_sous_declaration,
+        case
+            when impot_declare < revenu_declare * 0.2 then 1 else 0
+        end as flag_impot_bas
+    from base
+)
+
+select * from anomalies
+where flag_sous_declaration = 1 or flag_impot_bas = 1
+  );
+  
+[0m15:46:20.928776 [debug] [Thread-1 (]: SQL status: SELECT 763 in 0.039 seconds
+[0m15:46:20.939421 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:46:20.939421 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.fiscal_anomalies"} */
+alter table "fiscal_db"."public"."fiscal_anomalies" rename to "fiscal_anomalies__dbt_backup"
+[0m15:46:20.943009 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:46:20.944518 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:46:20.944518 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.fiscal_anomalies"} */
+alter table "fiscal_db"."public"."fiscal_anomalies__dbt_tmp" rename to "fiscal_anomalies"
+[0m15:46:20.944518 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:46:20.953033 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: COMMIT
+[0m15:46:20.954567 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:46:20.954567 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: COMMIT
+[0m15:46:20.963338 [debug] [Thread-1 (]: SQL status: COMMIT in 0.007 seconds
+[0m15:46:20.963338 [debug] [Thread-1 (]: Applying DROP to: "fiscal_db"."public"."fiscal_anomalies__dbt_backup"
+[0m15:46:20.963338 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fiscal.fiscal_anomalies"
+[0m15:46:20.973382 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_fiscal.fiscal_anomalies"} */
+drop table if exists "fiscal_db"."public"."fiscal_anomalies__dbt_backup" cascade
+[0m15:46:20.987090 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.015 seconds
+[0m15:46:20.992129 [debug] [Thread-1 (]: On model.dbt_fiscal.fiscal_anomalies: Close
+[0m15:46:20.994348 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1e8d52e9-12cd-48e7-81a3-9baedc327d0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA48BE4A0>]}
+[0m15:46:20.994348 [info ] [Thread-1 (]: 2 of 2 OK created sql table model public.fiscal_anomalies ...................... [[32mSELECT 763[0m in 0.20s]
+[0m15:46:20.994348 [debug] [Thread-1 (]: Finished running node model.dbt_fiscal.fiscal_anomalies
+[0m15:46:20.994348 [debug] [MainThread]: Using postgres connection "master"
+[0m15:46:20.994348 [debug] [MainThread]: On master: BEGIN
+[0m15:46:20.994348 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:46:21.031878 [debug] [MainThread]: SQL status: BEGIN in 0.030 seconds
+[0m15:46:21.032884 [debug] [MainThread]: On master: COMMIT
+[0m15:46:21.032884 [debug] [MainThread]: Using postgres connection "master"
+[0m15:46:21.034396 [debug] [MainThread]: On master: COMMIT
+[0m15:46:21.036404 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m15:46:21.037619 [debug] [MainThread]: On master: Close
+[0m15:46:21.042934 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:46:21.043935 [debug] [MainThread]: Connection 'list_fiscal_db' was properly closed.
+[0m15:46:21.044934 [debug] [MainThread]: Connection 'list_fiscal_db_public' was properly closed.
+[0m15:46:21.045934 [debug] [MainThread]: Connection 'model.dbt_fiscal.fiscal_anomalies' was properly closed.
+[0m15:46:21.047935 [info ] [MainThread]: 
+[0m15:46:21.051460 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.85 seconds (0.85s).
+[0m15:46:21.053148 [debug] [MainThread]: Command end result
+[0m15:46:21.110733 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fiscal\target\manifest.json
+[0m15:46:21.115916 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fiscal\target\semantic_manifest.json
+[0m15:46:21.134087 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_fiscal\target\run_results.json
+[0m15:46:21.136086 [info ] [MainThread]: 
+[0m15:46:21.138699 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:46:21.139614 [info ] [MainThread]: 
+[0m15:46:21.140613 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m15:46:21.143863 [debug] [MainThread]: Command `dbt run` succeeded at 15:46:21.143863 after 2.76 seconds
+[0m15:46:21.144860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA2EEDFF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA5408940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025CA578DEA0>]}
+[0m15:46:21.145863 [debug] [MainThread]: Flushing usage events
+[0m15:46:22.224859 [debug] [MainThread]: An error was encountered while trying to flush usage events
